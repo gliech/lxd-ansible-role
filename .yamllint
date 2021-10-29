@@ -1,0 +1,14 @@
+---
+extends: default
+ignore: |
+  __pypackages__/
+  node_modules/
+  vagrant/
+rules:
+  truthy:
+    allowed-values:
+      - 'true'
+      - 'false'
+      - 'yes'
+      - 'no'
+    ignore: .github/workflows/

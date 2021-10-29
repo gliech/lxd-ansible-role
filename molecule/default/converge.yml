@@ -1,0 +1,35 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Import lxd"
+      import_role:
+        name: "gliech.lxd"
+      vars:
+        lxd_config:
+          config: {}
+          networks: []
+          storage_pools:
+            - config:
+                source: /var/lib/lxd/storage-pools/default
+              description: ""
+              name: default
+              driver: dir
+          profiles:
+            - config:
+                security.privileged: "true"
+              description: Default LXD profile
+              devices:
+                root:
+                  path: /
+                  pool: default
+                  type: disk
+              name: default
+          projects:
+            - config:
+                features.images: "true"
+                features.networks: "true"
+                features.profiles: "true"
+                features.storage.volumes: "true"
+              description: Default LXD project
+              name: default

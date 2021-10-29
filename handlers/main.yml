@@ -1,0 +1,7 @@
+---
+- name: Restart lxd
+  systemd:
+    name: lxd.service
+    state: restarted
+  listen: restart_lxd
+  become: yes

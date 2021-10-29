@@ -1,0 +1,65 @@
+---
+- name: Remove iptables
+  community.general.pacman:
+    name: iptables
+    state: absent
+    force: yes
+  become: yes
+  when: ansible_os_family == 'Archlinux'
+
+- name: Install lxd
+  ansible.builtin.package:
+    name: lxd
+    state: present
+  become: yes
+
+- name: Add users to lxd group
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups:
+      - lxd
+    append: yes
+  loop: "{{ [ansible_user_id] | union(lxd_extra_users) }}"
+  become: yes
+
+- name: Reload user groups
+  ansible.builtin.meta: reset_connection
+
+- name: Start lxd service
+  ansible.builtin.systemd:
+    name: lxd.service
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Get lxd config
+  ansible.builtin.command:
+    cmd: lxd init --dump
+  register: lxd_current_config
+  changed_when: false
+
+- name: Update lxd config
+  ansible.builtin.command:
+    cmd: lxd init --preseed
+    stdin: "{{ lxd_config | to_yaml }}"
+  notify: restart_lxd
+  when: lxd_config != lxd_current_config.stdout | from_yaml
+
+- name: Define subuid/subgid files
+  template:
+    src: subid.j2
+    dest: "/etc/{{ item }}"
+    mode: 0644
+  loop:
+    - subuid
+    - subgid
+  become: yes
+  notify: restart_lxd
+
+- name: Set lxc default config
+  template:
+    src: lxc.conf.j2
+    dest: /etc/lxc/default.conf
+    mode: 0644
+  become: yes
+  notify: restart_lxd

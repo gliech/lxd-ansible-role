@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@gliech/semantic-release-config-base": "1",
+    "@gliech/semantic-release-config-github-ansible-role": "1",
+    "semantic-release": "17"
+  },
+  "release": {
+    "extends": [
+      "@gliech/semantic-release-config-base",
+      "@gliech/semantic-release-config-github-ansible-role"
+    ]
+  }
+}
