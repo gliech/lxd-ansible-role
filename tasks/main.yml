@@ -43,7 +43,17 @@
     cmd: lxd init --preseed
     stdin: "{{ lxd_config | to_yaml }}"
   notify: restart_lxd
-  when: lxd_config != lxd_current_config.stdout | from_yaml
+  when: lxd_config !=
+    lxd_current_config.stdout |
+    from_yaml |
+    moreati.jq.jq('delpaths([
+      paths |
+      select(
+        .[-1] |
+        strings |
+        startswith("volatile.")
+      )
+    ])')
 
 - name: Define subuid/subgid files
   template:
