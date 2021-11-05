@@ -21,6 +21,11 @@ jobs:
       - name: Install python packages
         run: pip install --no-input --requirement mol_requirements.txt
 
+        # workaround until release of
+        # https://github.com/ansible-community/molecule/commit/43f6880
+      - name: Install role dependencies globally
+        run: ansible-galaxy install -r molecule/default/requirements.yml
+
       - name: Full molecule test
         run: molecule test
         env:
