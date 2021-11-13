@@ -1,6 +1,6 @@
 ---
 - name: Restart lxd
-  systemd:
+  ansible.builtin.systemd:
     name: lxd.service
     state: restarted
   listen: restart_lxd

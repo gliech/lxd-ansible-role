@@ -13,6 +13,13 @@
     state: present
   become: yes
 
+- name: Create a dir for certs from gliech.lxd_client
+  ansible.builtin.file:
+    path: ~/lxd_client_certificates
+    mode: 0755
+    state: directory
+  when: lxd_create_client_cert_dir
+
 - name: Add users to lxd group
   ansible.builtin.user:
     name: "{{ ansible_user_id }}"
@@ -56,7 +63,7 @@
     ])')
 
 - name: Define subuid/subgid files
-  template:
+  ansible.builtin.template:
     src: subid.j2
     dest: "/etc/{{ item }}"
     mode: 0644
@@ -67,7 +74,7 @@
   notify: restart_lxd
 
 - name: Set lxc default config
-  template:
+  ansible.builtin.template:
     src: lxc.conf.j2
     dest: /etc/lxc/default.conf
     mode: 0644
