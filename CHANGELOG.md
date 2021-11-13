@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/gliech/lxd-ansible-role/compare/v2.0.0...v2.1.0) (2021-11-13)
+
+
+### Features
+
+* lxd_client_cert directory ([6f5b3f1](https://github.com/gliech/lxd-ansible-role/commit/6f5b3f110fa8662f58d2122d679afcb810e56071))
+
 # [2.0.0](https://github.com/gliech/lxd-ansible-role/compare/v1.0.0...v2.0.0) (2021-11-05)
 
 
