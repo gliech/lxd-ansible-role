@@ -13,13 +13,6 @@
     state: present
   become: yes
 
-- name: Create a dir for certs from gliech.lxd_client
-  ansible.builtin.file:
-    path: ~/lxd_client_certificates
-    mode: 0755
-    state: directory
-  when: lxd_create_client_cert_dir
-
 - name: Add users to lxd group
   ansible.builtin.user:
     name: "{{ ansible_user_id }}"
