@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/gliech/lxd-ansible-role/compare/v2.1.0...v2.1.1) (2021-11-15)
+
+
+### Bug Fixes
+
+* revert 6f5b3f1 ([8091376](https://github.com/gliech/lxd-ansible-role/commit/80913764c7b440837fabab58a4c13dd4a4c93703))
+
 # [2.1.0](https://github.com/gliech/lxd-ansible-role/compare/v2.0.0...v2.1.0) (2021-11-13)
 
 
