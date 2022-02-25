@@ -35,7 +35,7 @@ jobs:
 
       - name: Install nodejs
         if: github.event_name == 'push'
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
 
       - name: Install npm packages
         if: github.event_name == 'push'
