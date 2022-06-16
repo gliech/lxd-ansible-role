@@ -1,5 +1,5 @@
 ansible == 5.*
-molecule[docker,podman] == 3.*
+molecule[docker,podman] == 4.*
 yamllint == 1.*
 ansible-lint == 5.*
 jq == 1.2.1
