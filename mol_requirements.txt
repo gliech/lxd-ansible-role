@@ -1,4 +1,4 @@
-ansible == 5.*
+ansible == 6.*
 molecule[docker,podman] == 3.*
 yamllint == 1.*
 ansible-lint == 5.*
