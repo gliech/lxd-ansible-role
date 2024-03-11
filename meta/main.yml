@@ -6,7 +6,7 @@ galaxy_info:
   author: gliech
   description: Install lxd from the os package manager and configure it using a
     preseed object.
-  license: BSD-4-Clause
+  license: GPL-3.0-only
   min_ansible_version: 2.9
   platforms:
     - name: ArchLinux
