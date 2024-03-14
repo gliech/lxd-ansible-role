@@ -1,15 +1,14 @@
 ---
 dependencies: []
-
 galaxy_info:
   role_name: lxd
   author: gliech
   description: Install lxd from the os package manager and configure it using a
     preseed object.
   license: GPL-3.0-only
-  min_ansible_version: 2.9
+  min_ansible_version: "2.9"
   platforms:
     - name: ArchLinux
       versions:
-        - any
+        - all
   galaxy_tags: []

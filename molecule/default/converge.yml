@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: "Import lxd"
-      import_role:
+      ansible.builtin.import_role:
         name: "gliech.lxd"
       vars:
         lxd_config:
