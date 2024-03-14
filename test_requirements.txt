@@ -1,4 +1,5 @@
 ansible == 9.*
-molecule[docker,podman] == 24.*
+molecule == 24.*
+molecule-plugins[podman] == 23.*
 yamllint == 1.*
 ansible-lint == 24.*
