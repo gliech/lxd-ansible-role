@@ -2,7 +2,6 @@
 extends: default
 ignore: |
   __pypackages__/
-  node_modules/
   vagrant/
 rules:
   truthy:

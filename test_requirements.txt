@@ -1,0 +1,5 @@
+ansible == 9.*
+molecule[docker,podman] == 24.*
+yamllint == 1.*
+ansible-lint == 24.*
+jq == 1.2.1
