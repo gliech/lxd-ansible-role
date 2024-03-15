@@ -6,6 +6,6 @@ jobs:
   main:
     name: main
     uses:
-      gliech/semantic-release-config-github-ansible-role/.github/workflows/test_release.yml@v1
+      gliech/semantic-release-config-github-ansible-role/.github/workflows/test_release.yml@main
     secrets:
       ANSIBLE_GALAXY_API_KEY: ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
