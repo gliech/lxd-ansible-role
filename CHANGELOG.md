@@ -1,3 +1,17 @@
+## [2.1.2](https://github.com/gliech/lxd-ansible-role/compare/v2.1.1...v2.1.2) (2024-03-16)
+
+
+### Bug Fixes
+
+* new lxd features networks.zones and storage.buckets in default and molecule configs ([10272d9](https://github.com/gliech/lxd-ansible-role/commit/10272d967222dd127bf102b6c80353e76d0b1e37))
+* remove unneeded dependency on jq as `lxd init --dump` does not expose volatile configs anymore ([5019fa4](https://github.com/gliech/lxd-ansible-role/commit/5019fa42482052ad8d87ee06de596edc5a71f58c))
+* switch license to gpl ([0651787](https://github.com/gliech/lxd-ansible-role/commit/0651787716375c8f82be5dc025c605531ed4002a))
+
+
+### Continuous Integration
+
+* use mose recent pipeline version ([dbabec4](https://github.com/gliech/lxd-ansible-role/commit/dbabec432703d872f687b0049012c4874be88ef4))
+
 ## [2.1.1](https://github.com/gliech/lxd-ansible-role/compare/v2.1.0...v2.1.1) (2021-11-15)
 
 
