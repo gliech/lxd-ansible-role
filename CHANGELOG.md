@@ -1,3 +1,25 @@
+# [3.0.0](https://github.com/gliech/lxd-ansible-role/compare/v2.1.2...v3.0.0) (2024-03-24)
+
+
+### Bug Fixes
+
+* **defaults:** remove default for lxd_config as there is not a sensible scenario where you would not want to customize this ([b4369c6](https://github.com/gliech/lxd-ansible-role/commit/b4369c6cddc6c5c1cc6435d1cfec62376858ce4d))
+
+
+### Documentation
+
+* README file ([fce020d](https://github.com/gliech/lxd-ansible-role/commit/fce020da6b8dfc942c959780d0eec2f42a5c36ee))
+
+
+### Tests
+
+* **molecule:** update lxd config in test playbook to achieve idempotency ([61e9cf4](https://github.com/gliech/lxd-ansible-role/commit/61e9cf40a158b314c875d358a73cff67777bbb53))
+
+
+### BREAKING CHANGES
+
+* **defaults:** remove default for lxd_config as there is not a sensible scenario where you would not want to customize this
+
 ## [2.1.2](https://github.com/gliech/lxd-ansible-role/compare/v2.1.1...v2.1.2) (2024-03-16)
 
 
