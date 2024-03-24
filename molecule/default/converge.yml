@@ -15,6 +15,7 @@
               description: ""
               name: default
               driver: dir
+          storage_volumes: []
           profiles:
             - config:
                 security.privileged: "true"
